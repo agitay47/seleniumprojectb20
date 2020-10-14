@@ -18,10 +18,11 @@ public class P1_CybertekForgotPassword {
         //3. Locate all the WebElements on the page using XPATH and/or CSS locator only (total of 6)
         //a. “Home” link
         // Using the text of the anchor tag to locate a
-        WebElement homeLink = driver.findElement(By.xpath("//a[.='Home']"));
+        WebElement homeLink = driver.findElement(By.xpath("//a[.='Home']"));//one way
 
         //If I want to locate the same web element using href attribute value
-        //WebElement homeLink = driver.findElement(By.xpath("//a[@href='/']"));
+        //WebElement homeLink = driver.findElement(By.xpath("//a[@href='/']")); second way
+        //WebElement homeLink = driver.findElement(By.xpath("//a[@class='nav-link']"));     third way                                          a[@class="nav-link"]
 
         //to open search box in inspection tool:
         //MAC: command + F
@@ -31,7 +32,7 @@ public class P1_CybertekForgotPassword {
         WebElement header = driver.findElement(By.xpath("//h2[.='Forgot Password']"));
 
         //c. “E-mail” text
-        WebElement emailLabel = driver.findElement(By.xpath("//label[@for='email']"));
+        WebElement emailLabel = driver.findElement(By.xpath("//label[@for='email']"));////label
 
         //d. E-mail input box
         WebElement emailInput = driver.findElement(By.xpath("//input[@name='email']"));
@@ -45,7 +46,7 @@ public class P1_CybertekForgotPassword {
         WebElement retrivePasswordButton = driver.findElement(By.cssSelector("button.radius"));
 
         //f. “Powered by Cybertek School” text
-        WebElement linkText = driver.findElement(By.xpath("//a[.='Cybertek School']"));
+        WebElement linkText = driver.findElement(By.xpath("//a[.='Cybertek School']"));////a[@target='_blank']
         WebElement poweredByDiv = driver.findElement(By.xpath("//div[@style='text-align: center;']"));
 
         System.out.println("linkText = " + linkText.getText());
@@ -53,9 +54,10 @@ public class P1_CybertekForgotPassword {
 
 
 
+
         //4. Verify all WebElements are displayed.
         //.isDisplayed --> returns true if given web element is displayed
-        //.isDisplayed --> returns flase if given web element is NOT displayed
+        //.isDisplayed --> returns false if given web element is NOT displayed
         if (homeLink.isDisplayed() && emailLabel.isDisplayed() && header.isDisplayed()
                 && emailInput.isDisplayed() && retrivePasswordButton.isDisplayed()
                 && poweredByDiv.isDisplayed()){

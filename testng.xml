@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="Suite">
+    <test verbose="2" preserve-order="true" name="C:\Users\47agi\IdeaProjects\seleniumprojectb20">
+
+    </test>
+
+    <test name="Bitrix24">
+
+        <classes>
+            <class name="com.cybertek.tests.com.cybertek.tests.Bitrix24Assignment.LoginAsHelpDeskAC6"/>
+            <class name="com.cybertek.tests.com.cybertek.tests.Bitrix24Assignment.LoginAsHR"/>
+            <class name="com.cybertek.tests.com.cybertek.tests.Bitrix24Assignment.LoginAsMarketing"/>
+
+        </classes>
+
+
+    </test>
+
+
+</suite>
