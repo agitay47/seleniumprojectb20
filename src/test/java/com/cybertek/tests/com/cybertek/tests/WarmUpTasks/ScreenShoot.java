@@ -19,7 +19,7 @@ public class ScreenShoot {
        File file= ((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.FILE);
 
        //2.now copy the screenshot to desired location using copyFile method
-        FileUtils.copyFile(file,new File("src\\test\\java\\com\\cybertek\\tests\\com\\cybertek\\tests\\day1_selenium_intro"
+        FileUtils.copyFile(file,new File("src/test/java/com/cybertek/tests/com/cybertek/tests/day1_selenium_intro/"
                 +fileName+".jpg"));
     }
 }

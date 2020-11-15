@@ -31,7 +31,7 @@ public class JavaScriptExecutor_Practices {
     }
 
     @Test
-    public void scroll_using_jsexecutor_2() {
+    public void scroll_using_jsexecutor_2(){
         //get the page to scroll
         Driver.getDriver().get("http://practice.cybertekschool.com/large");
 
@@ -47,7 +47,12 @@ public class JavaScriptExecutor_Practices {
         js.executeScript("arguments[0].scrollIntoView(true)", cybertekLink);
         BrowserUtils.wait(2);
         js.executeScript("arguments[0].scrollIntoView(true)", homeLink);
+
+        BrowserUtils.wait(2);
+        js.executeScript("window.scrollBy(500, 500)");
+
     }
+
 
     @Test
     public void scroll_using_jsexecutor_3() {
@@ -62,5 +67,30 @@ public class JavaScriptExecutor_Practices {
             BrowserUtils.wait(1);
             js.executeScript("window.scrollBy(" + (i / 7) + "," + i + ")");
         }
+    }
+
+    @Test
+    public void fill_form_using_javascript(){
+        Driver.getDriver().get("http://practice.cybertekschool.com/sign_up");
+
+        WebElement usernameInput = Driver.getDriver().findElement(By.name("full_name"));
+        WebElement emailInput = Driver.getDriver().findElement(By.name("email"));
+        WebElement signUpbutton = Driver.getDriver().findElement(By.name("wooden_spoon"));
+
+        BrowserUtils.wait(1);
+
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+
+        //sending keys to usernameInput using JavaScript function .setAttribute
+        js.executeScript("arguments[0].setAttribute('value', 'Jane Doe')", usernameInput);
+
+        BrowserUtils.wait(1);
+        //sending keys to emailInput using JavaScript function .setAttribute
+        js.executeScript("arguments[0].setAttribute('value', 'something@gmail.com')", emailInput);
+
+        BrowserUtils.wait(1);
+        //clicking to signUpbutton using JavaScript function
+        js.executeScript("arguments[0].click()", signUpbutton);
+
     }
 }

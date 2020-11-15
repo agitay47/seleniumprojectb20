@@ -21,12 +21,20 @@ public class DragAndDrop {
         driver.manage().window().maximize();
         BrowserUtils.wait(2);
 
-        WebElement from=driver.findElement(By.xpath("//div[@id='draggable']"));
-        WebElement to=driver.findElement(By.xpath("//div[@id='droppable']"));
+        WebElement from = driver.findElement(By.xpath("//div[@id='draggable']"));
+        WebElement to = driver.findElement(By.xpath("//div[@id='droppable']"));
 
         Actions actions = new Actions(driver);
-       actions.clickAndHold(from).moveToElement(to).release().build().perform();
+        actions.clickAndHold(from).moveToElement(to).release().build().perform();
 
+
+       /*  List<WebElement> allLinks = driver.findElements(By.tagName("a"));
+
+ //Traversing through the list and printing its text along with link address
+ for(WebElement link:allLinks){
+ System.out.println(link.getText() + " - " + link.getAttribute("href"));
+ }
+*/
 
 
     }
